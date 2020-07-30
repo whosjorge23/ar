@@ -4,20 +4,16 @@
 <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.5.0/aframe/build/aframe-ar.js"> </script>
 </head>
  <body style="margin : 0px; overflow: hidden;">
-  <a-scene embedded arjs>
+  <a-scene embedded arjs="sourceType: webcam; debugUIEnabled: false;">
 
-    <a-asset>
-        <a-asset-item id=”oggetto3D-obj” src=”diceCollada.dae”></a-asset-item>
-        <a-asset-item id=”oggetto3D-mtl” src=”texture.mtl”></a-asset-item>
-        <a-mixin id=”normal” scale="1 1 1"></a-mixin>
-    </a-asset>
-
-    <a-marker preset=’custom’ type=’pattern’ url=’/article.png’></a-marker>
-
-  <a-marker type=’pattern’ url=’custom-pattern.patt’>
-      <a-entity mixin=”normal” dae-model="dae: #oggetto3D-obj; mtl: #oggetto3D-mtl" material=”color:black” position="0 0 0" rotation="0 0 0"></a-box>
-  </a-marker>
-  <a-entity camera></a-entity>
-  </a-scene>
+    <a-marker preset=’hiro’’>
+    
+    <a-box position="0 1 0" material="opacity: 0.5; color: #F70087;"></a-box>
+    
+    </a-marker>
+    
+    <a-entity camera></a-entity>
+    
+    </a-scene>
  </body>
 </html>
