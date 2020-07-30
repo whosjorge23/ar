@@ -1,0 +1,23 @@
+<html>
+<head>
+<script src="https://aframe.io/releases/0.6.1/aframe.min.js"> </script>
+<script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.5.0/aframe/build/aframe-ar.js"> </script>
+</head>
+ <body style="margin: 0; overflow: hidden;">
+    <a-scene embedded arjs>
+        <a-asset>
+            <a-asset-item id=”oggetto3D-obj” src='Range-Rover-Evoque.obj'></a-asset-item>
+            <a-asset-item id=”oggetto3D-mtl” src='Range Rover Evoque.mtl'></a-asset-item>
+            <a-mixin id=”normal” scale='1 1 1'></a-mixin>
+        </a-asset>
+    
+      <a-marker type=’pattern’ url=’custom-pattern.patt’>
+          <a-entity>
+            <a-entity mixin=”normal” obj-model='obj: #oggetto3D-obj; mtl: #oggetto3D-mtl' material=”color:black” position='0 0 0' rotation='0 0 0'></a-entity>
+            <a-animation attribute=”rotation” dur=”10000″ to="0 360 0" repeat=”indefinite”></a-animation>
+          </a-entity>
+      </a-marker>
+      <a-entity camera></a-entity>
+      </a-scene>
+ </body>
+</html>
